@@ -1,0 +1,21 @@
+version: "3.0"
+
+services:
+  web1:
+    image: myimgpyapp1 
+    ports:
+      - "5001:5001"
+    networks: 
+      - my_network
+  web2:
+    image: myimgpyapp2
+    ports:
+      - "5002:5002"
+    networks: 
+      - my_network
+
+networks:
+  my_network:
+    external:
+      name: "alpine-net"
+
